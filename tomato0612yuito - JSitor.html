@@ -1,0 +1,140 @@
+<!doctype html><html><head><style type="text/css">.header{
+  background-color: #c1c5ff;
+  height: 40px;
+  width: 670px;
+}
+.header logo{
+  color: rgb(0, 255, 42);
+  font-size: ;
+}
+.説明{
+  color: rgb(43, 255, 0);
+}
+.footer{
+  background-color: #c1c5ff;
+  height: 300px;
+}
+.tomato{
+  height: 250px;
+}</style></head><body><title>tomato0612yuito</title>
+<html>
+  <div class="header">
+    <div class="header logo">
+      <h1><a href="https://scratch.mit.edu/users/tomato0612yuito/">tomato0612yuito</a></h1>
+    </div> 
+  </div>
+  <div class="main">
+    <h1>どーもどーもtomato0612yuitoです〜
+    <img src="https://uploads.scratch.mit.edu/get_image/user/117674799_1500x1500.png"
+    <h1 class="説明">スクラッチャーだよ。スクラっておもろいよね。っていうか全然フォロワー数伸びないんだけど。それに自分で作ったスタジオもなんか全然伸びない。マジ。
+	<!Doctype html>
+	<html lang="ja">
+	
+	<head>
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="https://cdn.mlkcca.com/v0.6.0/milkcocoa.js"></script>
+		<script src="chat.js"></script>
+	
+		<style>
+			ul>li:first-child {
+				color: black;
+				font-size: 25px;
+			}
+	
+			ul>li:nth-child(2n) {
+				color: blue;
+			}
+	
+			ul>li:nth-child(2n):before {
+				content: "ユーザー名："
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div>
+			<!-- 投稿者 -->
+			<div>
+				<p>ユーザ名</p>
+				<textarea name="" id="jsi-name" cols="10" rows="1"></textarea>
+			</div>
+	
+			<!-- メッセージを打ち込む部分 -->
+			<div>
+				<p>内容</p>
+				<textarea name="" id="jsi-msg" cols="30" rows="4"></textarea>
+			</div>
+		</div>
+	
+		<!-- メッセージを送る部分 -->
+		<button name="button" id="jsi-button">送信</button>
+	
+		<!-- チャット内容が動的に生成される部分 -->
+		<ul id="jsi-board" style="list-style:none;">
+			<li>コメント</li>
+		</ul>
+	</body>
+	
+	</html>
+  </div>
+  <div class="footer">
+    <h2>tomato0612yuitoわーわーわーわーわーぁぁぁぁぁぁ</h2>
+    <p>とまとおいしいとまとおいしいとまとおいしいとまとおいしい
+	<img class="tomato" src="https://kohacu.com/wp-content/uploads/2024/02/kohacu.com_samune_003579.png"
+  </div> 
+</html><script type="text/javascript">var BAAS = BAAS || {};
+
+BAAS.cocoa = {
+  init: function () {
+    this.setParameters();
+    this.bindEvent();
+  },
+
+  setParameters: function () {
+    this.$name = $('#jsi-name');
+    this.$textArea = $('#jsi-msg');
+    this.$board = $('#jsi-board');
+    this.$button = $('#jsi-button');
+
+    //各自登録時に出たコードに書き換え。「chatRoom」は任意でok。複数の部屋を作りたい場合はここを動的にする。
+    this.chatDataStore = new MilkCocoa('各自').dataStore('chatRoom');
+  },
+
+  bindEvent: function () {
+    var self = this;
+    this.$button.on('click', function () { //トークを送信
+      self.sendMsg();
+    });
+
+    this.chatDataStore.on('push', function (data) { //発言者・トークを監視
+      self.addText(data.value.user);
+      self.addText(data.value.message);
+    });
+  },
+
+  //ユーザー、メッセージ送信
+  sendMsg: function () {
+    if (this.$textArea.val() == '') { return }
+
+    var self = this;
+    var name = this.$name.val();
+    var text = this.$textArea.val();
+
+    self.chatDataStore.push({ user: name, message: text }, function (data) {
+      self.$textArea.val('');
+    });
+  },
+
+  //受け取り後の処理
+  addText: function (json) {
+    var msgDom = $('<li>');
+    msgDom.html(json);
+    this.$board.append(msgDom[0]);
+  }
+}
+
+$(function () {
+  BAAS.cocoa.init();
+});
+
+</script></body><html>
